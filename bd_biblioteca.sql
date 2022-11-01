@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-11-2022 a las 02:32:11
+-- Tiempo de generación: 01-11-2022 a las 22:16:38
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -41,7 +41,9 @@ CREATE TABLE `autores` (
 INSERT INTO `autores` (`codigo_autor`, `apellido`, `nombre`, `nacionalidad`) VALUES
 (1, 'de Cervantes', 'Miguel', 'España'),
 (2, 'García', 'Gabriel', 'Colombia'),
-(3, 'Poe', 'Edgar', 'Estados Unidos');
+(3, 'Poe', 'Edgar', 'Estados Unidos'),
+(4, 'BAEZ TEJADO', 'JOAN', 'MEXICANA'),
+(5, 'PASCUAL ALOY', 'ESTHER', 'GUATEMALTECA');
 
 -- --------------------------------------------------------
 
@@ -64,7 +66,9 @@ CREATE TABLE `editoriales` (
 INSERT INTO `editoriales` (`codigo_editorial`, `nombre`, `direccion`, `telefono`, `email`) VALUES
 (1, 'santillana', '26av 2-20 zona 10', 24294300, 'servicioalclientegt@santillana.com'),
 (2, 'piedra santa', '5ta calle7-55 zona 1', 22046600, 'info@piedrasanta.com'),
-(3, 'susaeta', '12av 9-42 zona 1', 23894831, 'info@susaetaguatemala.com');
+(3, 'susaeta', '12av 9-42 zona 1', 23894831, 'info@susaetaguatemala.com'),
+(4, 'Editorial 300', '1ra. Calle 25-19 Zona 7', 936545115, 'Editorial300@correo.com'),
+(5, 'Editorial 500', '2da. Calle 23-20 Zona 8\r\n\r\n', 938350521, 'Editorial500@correo.com');
 
 -- --------------------------------------------------------
 
@@ -99,7 +103,7 @@ CREATE TABLE `libros` (
   `codigo_editorial` int(11) DEFAULT NULL,
   `titulo` varchar(100) DEFAULT NULL,
   `numero_paginas` int(11) DEFAULT NULL,
-  `tamanio` int(11) DEFAULT NULL,
+  `tamanio` varchar(20) DEFAULT NULL,
   `precio` int(11) DEFAULT NULL,
   `codigo_estado` int(11) DEFAULT NULL,
   `edicion` varchar(50) DEFAULT NULL
@@ -110,9 +114,11 @@ CREATE TABLE `libros` (
 --
 
 INSERT INTO `libros` (`codigo_libro`, `codigo_autor`, `codigo_editorial`, `titulo`, `numero_paginas`, `tamanio`, `precio`, `codigo_estado`, `edicion`) VALUES
-(1, 2, 3, 'La hojarasca', 462, 25, 30, 1, 'primera'),
-(2, 3, 1, 'El gato negro', 224, 25, 30, 2, 'segunda'),
-(3, 1, 2, 'Don Quijote de La Mancha', 462, 25, 30, 2, 'segunda');
+(1, 2, 3, 'La hojarasca', 462, 'Oficio', 150, 1, 'primera'),
+(2, 3, 1, 'El gato negro', 224, 'Carta', 100, 2, 'segunda'),
+(3, 1, 2, 'Don Quijote de La Mancha', 462, 'Oficio', 30, 2, 'segunda'),
+(4, 4, 4, 'Libro 4', 50, 'Standar', 1175, 2, 'Primera'),
+(5, 5, 5, 'Libro 5', 150, 'Carta', 125, 1, 'Primera');
 
 -- --------------------------------------------------------
 
@@ -167,6 +173,7 @@ INSERT INTO `tipos_usuarios` (`id_tipousuarios`, `nombre`, `descripcion`) VALUES
 CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
   `usuario` varchar(50) DEFAULT NULL,
+  `contra` int(50) DEFAULT NULL,
   `telefono` int(11) DEFAULT NULL,
   `id_tipousuarios` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -175,10 +182,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `usuario`, `telefono`, `id_tipousuarios`) VALUES
-(1, 'Alfonso', 25632012, 1),
-(2, 'Alfredo', 59368417, 2),
-(3, 'Hector', 45652135, 3);
+INSERT INTO `usuarios` (`id_usuario`, `usuario`, `contra`, `telefono`, `id_tipousuarios`) VALUES
+(1, 'Alfonso', 123456, 25632012, 1),
+(2, 'Alfredo', 123456, 59368417, 2),
+(3, 'Hector', 123456, 45652135, 3);
 
 --
 -- Índices para tablas volcadas
