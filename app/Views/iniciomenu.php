@@ -13,7 +13,7 @@
             <p><img src="../imagenes/banner.png" alt="IMAGEN NO ENCONTRADA" width=""></p>
         </div>
         <div class="item2">
-            <a href="<?= base_url('cargar_usuario')?>" style="text-decoration:none;" target="parent">
+            <a href="<?= base_url('cargar_admin')?>" style="text-decoration:none;" target="parent">
                 <div align="center" class="formulario">
                     <div class="carreaux_presentation_light" style="background-image:url(../imagenes/administrador.png);">
                         <div class="shadow_swhow_mini">

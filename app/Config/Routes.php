@@ -54,3 +54,4 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 $routes->get('cargar_usuario', 'Home::verUsuarios');
+$routes->get('cargar_admin', 'Cargado_admin::verAdmin');

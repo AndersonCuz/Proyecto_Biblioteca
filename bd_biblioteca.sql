@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-11-2022 a las 22:16:38
+-- Tiempo de generación: 02-11-2022 a las 02:31:17
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -73,6 +73,31 @@ INSERT INTO `editoriales` (`codigo_editorial`, `nombre`, `direccion`, `telefono`
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `empleados`
+--
+
+CREATE TABLE `empleados` (
+  `codigo_empleado` int(4) NOT NULL,
+  `nombre` varchar(16) DEFAULT NULL,
+  `apellido` varchar(17) DEFAULT NULL,
+  `direccion` varchar(26) DEFAULT NULL,
+  `email` varchar(17) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`codigo_empleado`, `nombre`, `apellido`, `direccion`, `email`) VALUES
+(1001, 'Andrea Esperanza', 'Avila Mendoza', '3ra. Calle 25-21 Zona 10', 'andavi@correo.com'),
+(1002, 'Ana Maribel', 'Bacajol', '3ra. Calle 25-01 Zona 13', 'anabac@correo.com'),
+(1003, 'Katerin Johana', 'Barahona Aguilar', '6ta. Calle 25-16 Zona 13', 'katbar@correo.com'),
+(1004, 'Josúe David', 'Barillas Quiñonez', '8va. Avenida 25-21 Zona 14', 'josbar@correo.com'),
+(1005, 'Paulo André', 'Barrera Cardona', '2da. Calle 24-23 Zona 19', 'paubar@correo.com');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `estados`
 --
 
@@ -90,6 +115,32 @@ INSERT INTO `estados` (`codigo_estado`, `nombre`) VALUES
 (2, 'regular'),
 (3, 'malo'),
 (4, 'deplorable');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `estudiantes`
+--
+
+CREATE TABLE `estudiantes` (
+  `carne_alumno` int(7) NOT NULL,
+  `nombre` varchar(15) DEFAULT NULL,
+  `apellido` varchar(17) DEFAULT NULL,
+  `direccion` varchar(26) DEFAULT NULL,
+  `telefono` int(8) DEFAULT NULL,
+  `email` varchar(17) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `estudiantes`
+--
+
+INSERT INTO `estudiantes` (`carne_alumno`, `nombre`, `apellido`, `direccion`, `telefono`, `email`) VALUES
+(2013001, 'Ana Maribel', 'Ajcabul', '1ra. Calle 25-18 Zona 15', 22452154, 'anaajc@correo.com'),
+(2013002, 'Katerin Johana', 'Albizures Keller', '2da. Calle 23-20 Zona 8', 22451323, 'katalb@correo.com'),
+(2013003, 'Josúe David', 'Alva De Leon', '3ra. Calle 24-21 Zona 9', 22451326, 'josalv@correo.com'),
+(2013004, 'Paulo André', 'Alvarado López', '3ra. Calle 24-23 Zona 10', 22451962, 'paualv@correo.com'),
+(2013005, 'Edgar Josue', 'Alvarado Recinos', '3ra. Calle 25-22 Zona 21', 22451953, 'edgalv@correo.com');
 
 -- --------------------------------------------------------
 
@@ -129,19 +180,21 @@ INSERT INTO `libros` (`codigo_libro`, `codigo_autor`, `codigo_editorial`, `titul
 CREATE TABLE `prestamos` (
   `id_prestamo` int(11) NOT NULL,
   `codigo_libro` int(11) DEFAULT NULL,
+  `carne_alumno` int(7) DEFAULT NULL,
   `fecha_prestamo` date DEFAULT NULL,
   `fecha_devolucion` date DEFAULT NULL,
-  `id_usuario` int(11) DEFAULT NULL
+  `id_usuario` int(11) DEFAULT NULL,
+  `codigo_empleado` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `prestamos`
 --
 
-INSERT INTO `prestamos` (`id_prestamo`, `codigo_libro`, `fecha_prestamo`, `fecha_devolucion`, `id_usuario`) VALUES
-(1, 3, '2022-03-10', '2022-03-24', 2),
-(2, 1, '2022-11-28', '2022-12-10', 3),
-(3, 2, '2022-09-26', '2022-10-10', 3);
+INSERT INTO `prestamos` (`id_prestamo`, `codigo_libro`, `carne_alumno`, `fecha_prestamo`, `fecha_devolucion`, `id_usuario`, `codigo_empleado`) VALUES
+(1, 3, 2013001, '2022-03-10', '2022-03-24', 2, 1001),
+(2, 1, 2013002, '2022-11-28', '2022-12-10', 3, 1004),
+(3, 2, 2013003, '2022-09-26', '2022-10-10', 3, 1005);
 
 -- --------------------------------------------------------
 
@@ -204,10 +257,23 @@ ALTER TABLE `editoriales`
   ADD PRIMARY KEY (`codigo_editorial`);
 
 --
+-- Indices de la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  ADD PRIMARY KEY (`codigo_empleado`),
+  ADD KEY `codigo_empleado` (`codigo_empleado`);
+
+--
 -- Indices de la tabla `estados`
 --
 ALTER TABLE `estados`
   ADD PRIMARY KEY (`codigo_estado`);
+
+--
+-- Indices de la tabla `estudiantes`
+--
+ALTER TABLE `estudiantes`
+  ADD PRIMARY KEY (`carne_alumno`);
 
 --
 -- Indices de la tabla `libros`
@@ -224,7 +290,9 @@ ALTER TABLE `libros`
 ALTER TABLE `prestamos`
   ADD PRIMARY KEY (`id_prestamo`),
   ADD KEY `codigo_libro_fk1` (`codigo_libro`),
-  ADD KEY `id_usuario_fk2` (`id_usuario`);
+  ADD KEY `id_usuario_fk2` (`id_usuario`),
+  ADD KEY `carne_alumno` (`carne_alumno`),
+  ADD KEY `codigo_empleado` (`codigo_empleado`);
 
 --
 -- Indices de la tabla `tipos_usuarios`
@@ -256,7 +324,9 @@ ALTER TABLE `libros`
 --
 ALTER TABLE `prestamos`
   ADD CONSTRAINT `codigo_libro_fk1` FOREIGN KEY (`codigo_libro`) REFERENCES `libros` (`codigo_libro`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `id_usuario_fk2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `id_usuario_fk2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `prestamos_ibfk_1` FOREIGN KEY (`carne_alumno`) REFERENCES `estudiantes` (`carne_alumno`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `prestamos_ibfk_2` FOREIGN KEY (`codigo_empleado`) REFERENCES `empleados` (`codigo_empleado`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `usuarios`
