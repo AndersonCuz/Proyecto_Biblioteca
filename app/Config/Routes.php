@@ -57,6 +57,13 @@ $routes->get('cargar_usuario', 'Home::verUsuarios');
 $routes->get('cargar_admin', 'Cargado_admin::verAdmin');
 /* fin de pantallas*/
 $routes->get('mostrar_empleados', 'Empleado::mostra_empleado');
-
+$routes->post('agregar_empleado', 'Empleado::agregarEmpleado');
+$routes->get('eliminar_empleado/(:num)', 'Empleado::eliminarEmpleado/$1');
+$routes->get('datos_empleado/(:num)', 'Empleado::verDatosEmpleado/$1');
+$routes->post('actualizar_empleado', 'Empleado::actualizarEmpleado');
 
 $routes->get('mostrar_estudiantes', 'Estudiante::mostrar_estudiante');
+$routes->post('agregar_estudiante', 'Estudiante::agregarEstudiante');
+$routes->get('eliminar_estudiante/(:num)', 'Estudiante::eliminarEstudiante/$1');
+$routes->get('datos_estudiante/(:num)', 'Estudiante::verDatosEstudiante/$1');
+$routes->post('actualizar_estudiante', 'Estudiante::actualizarEstudiante');
