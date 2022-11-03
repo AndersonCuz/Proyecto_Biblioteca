@@ -33,9 +33,9 @@ class Database extends Config
     public $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => '',
+        'username' => 'root',
         'password' => '',
-        'database' => '',
+        'database' => 'bd_biblioteca',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
@@ -58,12 +58,12 @@ class Database extends Config
      */
     public $tests = [
         'DSN'         => '',
-        'hostname'    => '127.0.0.1',
+        'hostname'    => 'localhost',
         'username'    => 'root',
         'password'    => '',
         'database'    => 'bd_biblioteca',
-        'DBDriver'    => 'SQLite3',
-        'DBPrefix'    => '',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
+        'DBDriver'    => 'MySQLi',
+        'DBPrefix'    => '',
         'pConnect'    => false,
         'DBDebug'     => (ENVIRONMENT !== 'production'),
         'charset'     => 'utf8',
