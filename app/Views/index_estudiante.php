@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Administrador</title>
+	<title>Estudiante</title>
 	<link rel="stylesheet" href="../CSS/estiloestudiante.css">
 </head>
 
@@ -16,7 +16,7 @@
 
 		<div class="card">
 			<figure>
-				<p><img src="../imagenes/icono_empleado.png" alt="IMAGEN NO ENCONTRADA" width=""></p>
+				<p><img src="../imagenes/icono_libro.png" alt="IMAGEN NO ENCONTRADA" width=""></p>
 			</figure>
 			<div class="contenido-card">
 				<h3>Libros</h3>
@@ -24,16 +24,7 @@
 				<a href="<?= base_url('mostrar_libros') ?>">Entrar</a>
 			</div>
 		</div>
-		<div class="card">
-			<figure>
-				<p><img src="../imagenes/icono_empleado.png" alt="IMAGEN NO ENCONTRADA" width=""></p>
-			</figure>
-			<div class="contenido-card">
-				<h3>Prestamos</h3>
-				<p>Podemos crear la identidad corporativa de tu empresa. Diseño , Maquetación de folletos, Catálogos, Papelería y mucho más.</p>
-				<a href="<?= base_url('mostrar_prestamos') ?>">Entrar</a>
-			</div>
-		</div>
+	</div>
 </body>
 
 </html>

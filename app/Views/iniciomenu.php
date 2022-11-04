@@ -15,7 +15,7 @@
         <div class="item2">
             <a href="<?= base_url('cargar_admin')?>" style="text-decoration:none;" target="parent">
                 <div align="center" class="formulario">
-                    <div class="carreaux_presentation_light" style="background-image:url(../imagenes/administrador.png);">
+                    <div class="carreaux_presentation_light" style="background-image:url(../imagenes/icono_administrador.png);">
                         <div class="shadow_swhow_mini">
                             <div class="deroul_titre">USUARIO Administrador</div>
                             <div class="deroul_soustitre">Biblioteca</div>
@@ -31,14 +31,14 @@
         <div class="item3">
             <a href="<?= base_url('cargar_Empleado')?>" style="text-decoration:none;" target="parent">
                 <div align="center" class="formulario">
-                    <div class="carreaux_presentation_light" style="background-image:url(../imagenes/bibliotecaria2.png);">
+                    <div class="carreaux_presentation_light" style="background-image:url(../imagenes/icono_empleado2.png);">
                         <div class="shadow_swhow_mini">
-                            <div class="deroul_titre">USUARIO Bibliotecaria</div>
+                            <div class="deroul_titre">USUARIO Empleados</div>
                             <div class="deroul_soustitre">Biblioteca</div>
                         </div>
                     </div>
                     <div style=" padding:5px; color:#1e4944; font-weight:300; font-size:30px; font-family:'Roboto';padding-top:20px;">
-                        USUARIO <font style="font-weight:400;">Bibliotecaria</font>
+                        USUARIO <font style="font-weight:400;">Empleados</font>
                     </div>
                 </div>
             </a>
@@ -46,7 +46,7 @@
         <div class="item4">
             <a href="<?= base_url('Cargar_Estudiante')?>" style="text-decoration:none;" target="parent"> 
                 <div align="center" class="formulario">
-                    <div class="carreaux_presentation_light" style="background-image:url(../imagenes/bibliotecaria.png);">
+                    <div class="carreaux_presentation_light" style="background-image:url(../imagenes/icono_estudiante2.png);">
                         <div class="shadow_swhow_mini">
                             <div class="deroul_titre">USUARIO Estudiante</div>
                             <div class="deroul_soustitre">Biblioteca</div>

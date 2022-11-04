@@ -17,7 +17,7 @@
 	    <p><img src="../imagenes/icono_empleado.png" alt="IMAGEN NO ENCONTRADA" width=""></p>
 	</figure>
 	<div class="contenido-card">
-		<h3>Libros</h3>
+		<h3>Empleados</h3>
 		<p>Podemos crear la identidad corporativa de tu empresa. Diseño , Maquetación de folletos, Catálogos, Papelería y mucho más.</p>
 		<a href="<?= base_url('mostrar_empleados')?>">Entrar</a>
 	</div>
@@ -27,7 +27,7 @@
 	    <p><img src="../imagenes/icono_estudiante.png" alt="IMAGEN NO ENCONTRADA" width=""></p>
 	</figure>
 	<div class="contenido-card">
-		<h3>Autores</h3>
+		<h3>Estudiantes</h3>
 		<p>Nosotros creamos y optimizamos tus perfiles en las Redes Sociales. Importantes para que tu presencia online sea completa.</p>
 		<a href="<?= base_url('mostrar_estudiantes')?>">Entrar</a>
 	</div>

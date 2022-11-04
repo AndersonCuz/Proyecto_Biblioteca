@@ -72,4 +72,5 @@ $routes->get('datos_estudiante/(:num)', 'Estudiante::verDatosEstudiante/$1');
 $routes->post('actualizar_estudiante', 'Estudiante::actualizarEstudiante');
 //union de tablas
 $routes->get('mostrar_libros', 'Libro::mostrar_libro');
+
 $routes->get('mostrar_prestamos', 'Prestamo::mostrar_prestamo');
