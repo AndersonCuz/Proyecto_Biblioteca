@@ -54,6 +54,7 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 $routes->get('cargar_usuario', 'Home::verUsuarios');
+$routes->get('Cargar_Estudiante', 'Cargado_Estudiante::verEstudiante');
 $routes->get('cargar_admin', 'Cargado_admin::verAdmin');
 /* fin de pantallas*/
 $routes->get('mostrar_empleados', 'Empleado::mostra_empleado');
@@ -67,3 +68,5 @@ $routes->post('agregar_estudiante', 'Estudiante::agregarEstudiante');
 $routes->get('eliminar_estudiante/(:num)', 'Estudiante::eliminarEstudiante/$1');
 $routes->get('datos_estudiante/(:num)', 'Estudiante::verDatosEstudiante/$1');
 $routes->post('actualizar_estudiante', 'Estudiante::actualizarEstudiante');
+//union de tablas
+$routes->get('mostrar_libros', 'Libro::mostrar_libro');

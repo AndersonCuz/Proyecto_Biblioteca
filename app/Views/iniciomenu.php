@@ -44,7 +44,7 @@
             </a>
         </div>
         <div class="item4">
-            <a href="<?= base_url('cargar_usuario')?>" style="text-decoration:none;" target="parent"> 
+            <a href="<?= base_url('Cargar_Estudiante')?>" style="text-decoration:none;" target="parent"> 
                 <div align="center" class="formulario">
                     <div class="carreaux_presentation_light" style="background-image:url(../imagenes/bibliotecaria.png);">
                         <div class="shadow_swhow_mini">

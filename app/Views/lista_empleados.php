@@ -82,7 +82,7 @@
             <td><?= $empleo['direccion'] ?></td>
             <td><?= $empleo['email'] ?></td>
             <td>
-            <a href="<?= base_url('datos_empleado/' . $empleo['codigo_empleado']) ?>">
+              <a href="<?= base_url('datos_empleado/' . $empleo['codigo_empleado']) ?>">
                 Actualizar
               </a>
               /
@@ -150,6 +150,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
-<body>
-</body>
+
+  <body>
+  </body>
+
 </html>
