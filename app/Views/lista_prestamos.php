@@ -4,42 +4,38 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lista Libros</title>
+    <title>Lista Prestamos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container">
-        <h1>Lista Libro!</h1>
+        <h1>Lista Prestamos!</h1>
         <table class="table table-striped table-hover" id="dataTable">
             <thead>
                 <tr>
-                    <th>codigo Libro</th>
-                    <th>Autor</th>
-                    <th>Editorial</th>
-                    <th>Titulo</th>
-                    <th>No. Paginas</th>
-                    <th>Tamaño</th>
-                    <th>Precio</th>
-                    <th>Estado</th>
-                    <th>Edicion</th>
+                    <th>codigo prestamo</th>
+                    <th>codigo de libro</th>
+                    <th>Carne Alumno</th>
+                    <th>Fecha Prestamo</th>
+                    <th>Fecha Devolicion</th>
+                    <th>codigo usuario</th>
+                    <th>Codigo Empledo</th>
                     <th>Accion</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                foreach ($datosLibr as $lib) :
+                foreach ($datopresta as $pres) :
                 ?>
                     <tr>
-                        <td><?= $lib['codigo_libro'] ?></td>
-                        <td><?= $lib['codigo_autor'] ?></td>
-                        <td><?= $lib['codigo_editorial'] ?></td>
-                        <td><?= $lib['titulo'] ?></td>
-                        <td><?= $lib['numero_paginas'] ?></td>
-                        <td><?= $lib['tamanio'] ?></td>
-                        <td><?= $lib['precio'] ?></td>
-                        <td><?= $lib['codigo_estado'] ?></td>
-                        <td><?= $lib['edicion'] ?></td>
+                        <td><?= $pres['id_prestamo'] ?></td>
+                        <td><?= $pres['codigo_libro'] ?></td>
+                        <td><?= $pres['carne_alumno'] ?></td>
+                        <td><?= $pres['fecha_prestamo'] ?></td>
+                        <td><?= $pres['fecha_devolucion'] ?></td>
+                        <td><?= $pres['id_usuario'] ?></td>
+                        <td><?= $pres['codigo_empleado'] ?></td>
                         <td>
                             Actualizar
                             /

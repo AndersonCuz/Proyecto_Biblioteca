@@ -29,7 +29,7 @@
             </a>
         </div>
         <div class="item3">
-            <a href="<?= base_url('cargar_usuario')?>" style="text-decoration:none;" target="parent">
+            <a href="<?= base_url('cargar_Empleado')?>" style="text-decoration:none;" target="parent">
                 <div align="center" class="formulario">
                     <div class="carreaux_presentation_light" style="background-image:url(../imagenes/bibliotecaria2.png);">
                         <div class="shadow_swhow_mini">
