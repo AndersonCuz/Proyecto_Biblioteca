@@ -9,50 +9,125 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Lista Libro!</h1>
+<div class="container">
+        <h1>Lista Libros!</h1>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Agregar Libros
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Libro</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="<?= base_url('agregar_libro') ?>" method="post">
+                            <div class="mb-3">
+                                <label for="txt_codigo" class="form-label">Código Libro</label>
+                                <input type="text" class="form-control" name="txt_codigo" placeholder="Ingrese código libro">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_autor" class="form-label">Código Autor</label>
+                                <input type="text" class="form-control" name="txt_autor" placeholder="Ingrese autor">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_editorial" class="form-label">Código Editorial</label>
+                                <input type="text" class="form-control" name="txt_editorial" placeholder="Ingrese editorial">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_titulo" class="form-label">Título</label>
+                                <input type="text" class="form-control" name="txt_titulo" placeholder="Ingrese título">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_paginas" class="form-label">Número de Páginas</label>
+                                <input type="text" class="form-control" name="txt_paginas" placeholder="Ingrese número de páginas">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_tamanio" class="form-label">Tamaño</label>
+                                <input type="text" class="form-control" name="txt_tamanio" placeholder="Ingrese tamaño">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_precio" class="form-label">Precio</label>
+                                <input type="text" class="form-control" name="txt_precio" placeholder="Ingrese precio">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_estado" class="form-label">Estado</label>
+                                <input type="text" class="form-control" name="txt_estado" placeholder="Ingrese estado">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_edicion" class="form-label">Edición</label>
+                                <input type="text" class="form-control" name="txt_edicion" placeholder="Ingrese edición">
+                            </div>
+                            <div class="mb-3">
+                                <input type="submit" class="form-control" name="btn_guardar_libro" value="Agregar Libro">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <table class="table table-striped table-hover" id="dataTable">
             <thead>
                 <tr>
-                    <th>codigo Libro</th>
+                    <th>Código Libro</th>
                     <th>Autor</th>
                     <th>Editorial</th>
                     <th>Titulo</th>
-                    <th>No. Paginas</th>
+                    <th>No. Páginas</th>
                     <th>Tamaño</th>
                     <th>Precio</th>
                     <th>Estado</th>
-                    <th>Edicion</th>
-                    <th>Accion</th>
+                    <th>Edición</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
-            <tbody>
+
+            <body>
                 <?php
-                foreach ($datosLibr as $lib) :
+                foreach ($datosLibr as $libs) :
                 ?>
                     <tr>
-                        <td><?= $lib['codigo_libro'] ?></td>
-                        <td><?= $lib['codigo_autor'] ?></td>
-                        <td><?= $lib['codigo_editorial'] ?></td>
-                        <td><?= $lib['titulo'] ?></td>
-                        <td><?= $lib['numero_paginas'] ?></td>
-                        <td><?= $lib['tamanio'] ?></td>
-                        <td><?= $lib['precio'] ?></td>
-                        <td><?= $lib['codigo_estado'] ?></td>
-                        <td><?= $lib['edicion'] ?></td>
+                        <td><?php echo $libs['codigo_libro']; ?></td>
+                        <td><?= $libs['codigo_autor'] ?></td>
+                        <td><?= $libs['codigo_editorial'] ?></td>
+                        <td><?= $libs['titulo'] ?></td>
+                        <td><?= $libs['numero_paginas'] ?></td>
+                        <td><?= $libs['tamanio'] ?></td>
+                        <td><?= $libs['precio'] ?></td>
+                        <td><?= $libs['codigo_estado'] ?></td>
+                        <td><?= $libs['edicion'] ?></td>
                         <td>
-                            Actualizar
+                            <a href="<?= base_url('datos_libro/' . $libs['codigo_libro']) ?>">
+                                Actualizar
+                            </a>
                             /
-                            Eliminar
+                            <a href="<?= base_url('eliminar_libro/' . $libs['codigo_libro']) ?>">
+                                Eliminar
+                            </a>
                         </td>
                     </tr>
                 <?php
                 endforeach;
                 ?>
-            </tbody>
+            </body>
         </table>
+
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <!--datatable-->
+    <script src="<?= base_url('js/jquery-3.5.1.js') ?>"></script>
+    <script src="<?= base_url('js/jquery.dataTables.min.js') ?>"></script>
+    <script src="<?= base_url('js/configuracionDataTables.js') ?>"></script>
 </body>
 
 </html>
