@@ -66,11 +66,19 @@ $routes->get('datos_empleado/(:num)', 'Empleado::verDatosEmpleado/$1');
 $routes->post('actualizar_empleado', 'Empleado::actualizarEmpleado');
 
 $routes->get('mostrar_estudiantes', 'Estudiante::mostrar_estudiante');
-$routes->post('agregar_estudiante', 'Estudiante::agregarEstudiante');
+$routes->post('agregar_estudiante', 'Estudiante::agregarPrestamo');
 $routes->get('eliminar_estudiante/(:num)', 'Estudiante::eliminarEstudiante/$1');
 $routes->get('datos_estudiante/(:num)', 'Estudiante::verDatosEstudiante/$1');
 $routes->post('actualizar_estudiante', 'Estudiante::actualizarEstudiante');
-//union de tablas
-$routes->get('mostrar_libros', 'Libro::mostrar_libro');
-
+//union de tablas prestamos
 $routes->get('mostrar_prestamos', 'Prestamo::mostrar_prestamo');
+$routes->post('agregar_prestamo', 'Prestamo::agregarPrestamo');
+$routes->get('eliminar_prestamo/(:num)', 'Prestamo::eliminarPrestamo/$1');
+$routes->get('datos_prestamo/(:num)', 'Prestamo::verDatosPrestamo/$1');
+$routes->post('actualizar_prestamo', 'Prestamo::actualizarPrestamo');
+//union de tablas libros
+$routes->get('mostrar_libros', 'Libro::mostrar_libro');
+$routes->post('agregar_libro', 'Libro::agregarLibro');
+$routes->get('eliminar_libro/(:num)', 'Libro::eliminarLibro/$1');
+$routes->get('datos_libro/(:num)', 'Libro::verDatosLibro/$1');
+$routes->post('actualizar_libro', 'Libro::actualizarLibro');
