@@ -13,7 +13,7 @@
             <p><img src="../imagenes/banner.png" alt="IMAGEN NO ENCONTRADA" width=""></p>
         </div>
         <div class="item2">
-            <a href="<?= base_url('cargar_admin')?>" style="text-decoration:none;" target="parent">
+            <a href="<?= base_url('cargar_usuario')?>" style="text-decoration:none;" target="parent">
                 <div align="center" class="formulario">
                     <div class="carreaux_presentation_light" style="background-image:url(../imagenes/icono_administrador.png);">
                         <div class="shadow_swhow_mini">
@@ -29,7 +29,7 @@
             </a>
         </div>
         <div class="item3">
-            <a href="<?= base_url('cargar_Empleado')?>" style="text-decoration:none;" target="parent">
+            <a href="<?= base_url('cargar_usuario')?>" style="text-decoration:none;" target="parent">
                 <div align="center" class="formulario">
                     <div class="carreaux_presentation_light" style="background-image:url(../imagenes/icono_empleado2.png);">
                         <div class="shadow_swhow_mini">
@@ -44,7 +44,7 @@
             </a>
         </div>
         <div class="item4">
-            <a href="<?= base_url('Cargar_Estudiante')?>" style="text-decoration:none;" target="parent"> 
+            <a href="<?= base_url('cargar_usuario')?>" style="text-decoration:none;" target="parent"> 
                 <div align="center" class="formulario">
                     <div class="carreaux_presentation_light" style="background-image:url(../imagenes/icono_estudiante2.png);">
                         <div class="shadow_swhow_mini">

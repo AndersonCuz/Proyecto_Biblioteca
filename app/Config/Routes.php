@@ -53,6 +53,10 @@ $routes->get('/', 'Home::index');
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+//inicio de sesion
+$routes->get('empleado','EmpleadoUsuario::irInicio');
+$routes->post('sesion_empleado','EmpleadoUsuario::iniciarSesionEmp');
+//fin de incio de sesion
 $routes->get('cargar_usuario', 'Home::verUsuarios');
 $routes->get('Cargar_Estudiante', 'Cargado_Estudiante::verEstudiante');
 $routes->get('cargar_admin', 'Cargado_admin::verAdmin');
