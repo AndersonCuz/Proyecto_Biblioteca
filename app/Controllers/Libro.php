@@ -9,13 +9,8 @@ class Libro extends Controller{
 
     public function mostrar_libro(){
         $lib = new Libros();
-        $listaLibro = $lib->findAll();
-
-        $auto = new Autores();
-        $listaAutor['datosAutor'] = $auto->findAll();
-
-        $datoLibro = array('datosLibr'=> $listaLibro,'datoauto'=>$listaAutor);
-        return view('lista_libro',$datoLibro);
+        $listaLibro['datosLibr']=$lib->findAll();
+        return view('lista_libro',$listaLibro);
     }
     public function agregarLibro(){
         echo 'hola mundo';
