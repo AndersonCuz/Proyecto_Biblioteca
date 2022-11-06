@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url('datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css') ?>">
     <!--font awesome con CDN-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= base_url('css/jquery.dataTables.min.css') ?>">
 </head>
 
@@ -84,7 +84,8 @@
                 </div>
             </div>
         </div>
-        <br>
+        <hr>
+        <hr>
         <table class="table table-striped table-hover" id="dataTable">
             <thead>
                 <tr>
@@ -117,11 +118,11 @@
                         <td><?= $libs['edicion'] ?></td>
                         <td>
                             <a href="<?= base_url('datos_libro/' . $libs['codigo_libro']) ?>">
-                                Actualizar
+                                <i class="bi bi-pencil-square"></i>
                             </a>
-                            /
+                            |
                             <a href="<?= base_url('eliminar_libro/' . $libs['codigo_libro']) ?>">
-                                Eliminar
+                                <i class="bi bi-trash"></i>
                             </a>
                         </td>
                     </tr>

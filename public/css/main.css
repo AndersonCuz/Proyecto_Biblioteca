@@ -17,3 +17,6 @@ table>tbody>tr>td {
 .btn-group, .btn-group-vertical {
     position: absolute !important;
 }
+.contenedor-icono>i{
+    font-size: 500px;
+}
