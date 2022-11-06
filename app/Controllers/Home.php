@@ -8,7 +8,4 @@ class Home extends BaseController
     {
         return view('iniciomenu');
     }
-    public function verUsuarios(){
-        return view('inicio_sesion_empleado');
-    }
 }

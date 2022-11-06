@@ -1,40 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Iniciar Sesión</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="../CSS/login.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="text-center">Iniciar Sesión</h1>
-        <div class="row">
-            <div class="col-md-4 offset-md-4 bg-light border rounded-2">
-                <br>
-                <form action="<?= base_url('iniciar_sesion') ?>" method="post">
-                    <div class="mb-3">
-                        <label for="txt_usuario" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" name="txt_usuario" placeholder="Usuario">
-                    </div>
-                    <div class="mb-3">
-                        <label for="txt_contra" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" name="txt_contra" placeholder="Contraseña">
-                    </div>
-                    <div class="mb-3">
-                        <input type="submit" class="form-control btn btn-secondary" name="btn_sesion" value="Iniciar Sesión">
-                    </div>
-                </form>
-                <br>
-            </div>
-
-            <a href="<?=base_url('empleado')?>" class="link-primary text-center">portal de empleados </a>
-        </div>
-       
+    <div class="form-login">
+        <form action="<?= base_url('entrarsesion') ?>" method="post">
+            <h1 class="animate__animated animate__backInLeft">INICIAR SESION</h1>
+            <p class="blanco">Usuario <input type="text" placeholder="Ingrese Usuario" name="usuario"></p>
+            <p class="blanco">Contraseña <input type="password" placeholder=" Ingrese Contraseña" name="contra"></p>
+            <input class="btn btn-success" type="submit" value="Ingresar">
+        </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

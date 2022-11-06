@@ -69,6 +69,7 @@
         </div>
       </div>
     </div>
+    <br>
     <table class="table table-striped table-hover" id="dataTable">
       <thead>
         <tr>

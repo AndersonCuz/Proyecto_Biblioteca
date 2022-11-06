@@ -54,14 +54,15 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 //inicio de sesion
-$routes->get('empleado','EmpleadoUsuario::irInicio');
-$routes->post('sesion_empleado','EmpleadoUsuario::iniciarSesionEmp');
+
+$routes->get('irasesiones', 'IraSesion::irasesion');
+$routes->post('entrarsesion', 'validar::entrarSesiones');
 //fin de incio de sesion
 $routes->get('cargar_usuario', 'Home::verUsuarios');
 $routes->get('Cargar_Estudiante', 'Cargado_Estudiante::verEstudiante');
 $routes->get('cargar_admin', 'Cargado_admin::verAdmin');
 $routes->get('cargar_Empleado', 'Cargar_Empleado::verEmpleados');
-//verEmpleados
+
 /* fin de pantallas*/
 $routes->get('mostrar_empleados', 'Empleado::mostra_empleado');
 $routes->post('agregar_empleado', 'Empleado::agregarEmpleado');
