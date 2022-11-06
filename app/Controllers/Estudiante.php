@@ -39,7 +39,6 @@ class Estudiante extends Controller{
         return view('lista_estudiantes',$listaestu);
     }
     public function verDatosEstudiante($codigo=null){
-        echo 'hola mundo';
         $estu = new Estudiantes();
         $listaestu['datoestudiante']=$estu->where('carne_alumno',$codigo)->first();
         return view('frm_actualizar_estudiante',$listaestu);
