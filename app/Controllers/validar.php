@@ -24,9 +24,11 @@ class validar extends Controller
       if ($filas['id_usuario'] == 1) {
 
         return view('index_admin');
+        
       } elseif ($filas['id_usuario'] == 2) {
 
         return view('index_estudiante');
+
       } elseif ($filas['id_usuario'] == 3) {
 
         return view('index_empleado');
