@@ -13,7 +13,6 @@ class Libro extends Controller{
         return view('lista_libro',$listaLibro);
     }
     public function agregarLibro(){
-        echo 'hola mundo';
         $lib = new Libros();
         $codigo = $this->request->getVar('txt_codigo');
         $autor = $this->request->getVar('txt_autor');
@@ -38,7 +37,7 @@ class Libro extends Controller{
 
         $lib->insert($listaLibro);
         
-        $listaPresta['datosLibr']=$lib->findAll();
+        $listaLibro['datosLibr']=$lib->findAll();
         return view('lista_libro',$listaLibro);
     }
     public function eliminarLibro($codigo=null){
@@ -79,7 +78,7 @@ class Libro extends Controller{
 
         $lib->update($codigo,$listaLibro);
         
-        $listaPresta['datosLibr']=$lib->findAll();
+        $listaLibro['datosLibr']=$lib->findAll();
         return view('lista_libro',$listaLibro);
     }
 }

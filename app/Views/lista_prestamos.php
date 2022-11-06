@@ -97,7 +97,7 @@
                 foreach ($datopresta as $pres) :
                 ?>
                     <tr>
-                        <td><?php echo $pres['id_prestamo']; ?></td>
+                        <td><?= $pres['id_prestamo'] ?></td>
                         <td><?= $pres['codigo_libro'] ?></td>
                         <td><?= $pres['carne_alumno'] ?></td>
                         <td><?= $pres['fecha_prestamo'] ?></td>
