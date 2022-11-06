@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lista Estudiantes</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="<?= base_url('css/main.css') ?>">
+
+  <link rel="stylesheet" type="text/css" href="<?= base_url('datatables/datatables.min.css') ?>">
+  <!--datables estilo bootstrap 4 CSS-->
+  <link rel="stylesheet" type="text/css" href="<?= base_url('datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css') ?>">
+  <!--font awesome con CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="<?= base_url('css/jquery.dataTables.min.css') ?>">
 </head>
 
 <body>
@@ -105,57 +115,22 @@
 
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-
   <!--datatable-->
   <script src="<?= base_url('js/jquery-3.5.1.js') ?>"></script>
-  <script src="<?= base_url('js/jquery.dataTables.min.js') ?>"></script>
-  <script src="<?= base_url('js/configuracionDataTables.js') ?>"></script>
 
+  <!-- datatables JS -->
+  <script type="text/javascript" src="<?= base_url('datatables/datatables.min.js') ?>"></script>
 
+  <!-- para usar botones en datatables JS -->
+  <script src="<?= base_url('datatables/Buttons-1.5.6/js/dataTables.buttons.min.js') ?>"></script>
+  <script src="<?= base_url('datatables/JSZip-2.5.0/jszip.min.js') ?>"></script>
+  <script src="<?= base_url('datatables/pdfmake-0.1.36/pdfmake.min.js') ?>"></script>
+  <script src="<?= base_url('datatables/pdfmake-0.1.36/vfs_fonts.js') ?>"></script>
+  <script src="<?= base_url('datatables/Buttons-1.5.6/js/buttons.html5.min.js') ?>"></script>
+  <!-- código JS propìo-->
+  <script type="text/javascript" src="<?= base_url('js/main.js') ?>"></script>
 
-
-
-
-  <h1>Lista Estudiantes!</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Carne Alumno</th>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Direccion</th>
-        <th>Telefono</th>
-        <th>Email</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-      foreach ($datoestudiante as $estud) :
-      ?>
-        <tr>
-          <td><?= $estud['carne_alumno'] ?></td>
-          <td><?= $estud['nombre'] ?></td>
-          <td><?= $estud['apellido'] ?></td>
-          <td><?= $estud['direccion'] ?></td>
-          <td><?= $estud['telefono'] ?></td>
-          <td><?= $estud['email'] ?></td>
-          <td>
-            Actualizar
-            /
-            Eliminar
-          </td>
-        </tr>
-      <?php
-      endforeach;
-      ?>
-    </tbody>
-  </table>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 
 </html>
