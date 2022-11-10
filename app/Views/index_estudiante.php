@@ -21,7 +21,7 @@
 			<div class="contenido-card">
 				<h3>Libros</h3>
 				<p>Podemos crear la identidad corporativa de tu empresa. Diseño , Maquetación de folletos, Catálogos, Papelería y mucho más.</p>
-				<a href="<?= base_url('mostrar_libros') ?>">Entrar</a>
+				<a href="<?= base_url('mostrar_libros2') ?>">Entrar</a>
 			</div>
 		</div>
 	</div>

@@ -84,6 +84,7 @@ $routes->post('actualizar_prestamo', 'Prestamo::actualizarPrestamo');
 
 //union de tablas libros
 $routes->get('mostrar_libros', 'Libro::mostrar_libro');
+$routes->get('mostrar_libros2', 'Libro2::mostrar_libro2');
 $routes->post('agregar_libro', 'Libro::agregarLibro');
 $routes->get('eliminar_libro/(:num)', 'Libro::eliminarLibro/$1');
 $routes->get('datos_libro/(:num)', 'Libro::verDatosLibro/$1');

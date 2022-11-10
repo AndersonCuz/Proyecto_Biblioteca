@@ -4,9 +4,9 @@
 	box-sizing: border-box;
   }
   
-  body {
+.body {
 	font-family: arial;
-	background-image: url('bg.png');
+	background-image: url('../imagenes/fondo_blanco.jpg');
   }
   
   .form-login {
