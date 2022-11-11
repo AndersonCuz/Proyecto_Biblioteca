@@ -102,7 +102,7 @@
                 </tr>
             </thead>
 
-            <body>
+            <tbody>
                 <?php
                 foreach ($datosLibr as $libs) :
                 ?>
@@ -129,7 +129,7 @@
                 <?php
                 endforeach;
                 ?>
-            </body>
+            </tbody>
         </table>
 
     </div>

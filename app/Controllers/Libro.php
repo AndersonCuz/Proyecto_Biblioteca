@@ -47,13 +47,7 @@ class Libro extends Controller{
         $listaLibro['datosLibr']=$lib->findAll();
         return view('lista_libro',$listaLibro);
     }
-    public function verDatosLibro($codigo=null){
-        $lib = new Libros();
-        $listaLibro['datosLibr']=$lib->where('codigo_libro',$codigo)->first();
-        return view('frm_actualizar_libro',$listaLibro);
-    }
     public function actualizarLibro(){
-        echo 'hola mundo';
         $lib = new Libros();
         $codigo = $this->request->getVar('txt_codigo');
         $autor = $this->request->getVar('txt_autor');

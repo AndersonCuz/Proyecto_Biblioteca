@@ -92,7 +92,7 @@
                 </tr>
             </thead>
 
-            <body>
+            <tbody>
                 <?php
                 foreach ($datopresta as $pres) :
                 ?>
@@ -117,7 +117,7 @@
                 <?php
                 endforeach;
                 ?>
-            </body>
+            </tbody>
         </table>
 
     </div>

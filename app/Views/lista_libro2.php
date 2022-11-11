@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="es">
-
+    
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,8 +38,7 @@
                     <th>Solicitud</th>
                 </tr>
             </thead>
-
-            <body>
+            <tbody>
                 <?php
                 foreach ($datosLibr as $libs) :
                 ?>
@@ -55,7 +54,7 @@
                         <td><?= $libs['edicion'] ?></td>
                         <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Agregar Prestamo
+            Agregar Prestamo!
         </button>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,9 +111,8 @@
                 <?php
                 endforeach;
                 ?>
-            </body>
+            </tbody>
         </table>
-
     </div>
 
     <!--datatable-->
